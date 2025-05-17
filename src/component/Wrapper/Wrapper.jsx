@@ -1,0 +1,12 @@
+import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
+
+export function Wrapper({children}) {
+  return (
+    <>
+      <Footer />
+      {children}
+      <Header />
+    </>
+  );
+}

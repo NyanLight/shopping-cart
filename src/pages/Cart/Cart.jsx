@@ -1,9 +1,9 @@
 import { Wrapper } from "../../component/Wrapper/Wrapper";
 
-export function Goods() {
+export function Cart() {
   return (
     <Wrapper>
-      <div>Hi, I am a goods component</div>
+      <div>Cart</div>
     </Wrapper>
   );
 }
