@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.companyName {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+}
+
+.icons {
+    display: flex;  
+    gap: 1rem;
+}

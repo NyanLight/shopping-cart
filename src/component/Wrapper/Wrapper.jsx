@@ -4,9 +4,9 @@ import { Header } from "../Header/Header";
 export function Wrapper({children}) {
   return (
     <>
-      <Footer />
-      {children}
       <Header />
+      {children}
+      <Footer />
     </>
   );
 }

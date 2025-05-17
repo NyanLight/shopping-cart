@@ -5,6 +5,7 @@ import { Goods } from "./pages/Goods/Goods";
 import { Cart } from "./pages/Cart/Cart";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
