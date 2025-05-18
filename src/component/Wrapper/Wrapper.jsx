@@ -5,7 +5,9 @@ export function Wrapper({children}) {
   return (
     <>
       <Header />
+      <main>
       {children}
+      </main>
       <Footer />
     </>
   );
