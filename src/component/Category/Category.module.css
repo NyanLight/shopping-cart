@@ -1,0 +1,18 @@
+.category {
+    max-width: 80%;
+    margin: auto;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1.875rem;
+    
+}
+
+.title {
+    color: rgba(131, 131, 131, 1);
+    margin-bottom: 1rem;
+}
