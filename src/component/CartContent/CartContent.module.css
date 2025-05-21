@@ -1,0 +1,17 @@
+.section {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
