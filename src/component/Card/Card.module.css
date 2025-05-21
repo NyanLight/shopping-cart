@@ -1,5 +1,5 @@
 .card {
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: white;
     max-width: 350px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    min-height: 70%;
 }
 
 .titlePart {
@@ -34,9 +35,10 @@
     flex-direction: row-reverse;
 }
 
-button {
+.buyBtn {
     font-weight: 700;
     background-color: transparent;
+    color: black;
     border: none;
     font-size: 1.125rem;
 }

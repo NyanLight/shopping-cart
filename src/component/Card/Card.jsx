@@ -11,7 +11,7 @@ export function Card({id, title, price, image }) {
         <div className={styles.price}>${price}</div>
       </div>
       <div className={styles.btnPart}>
-        <button onClick={() => console.log(`clicked on ${id}`) }>Add to cart</button>
+        <button className={styles.buyBtn} onClick={() => console.log(`clicked on ${id}`) }>Buy</button>
       </div>
     </article>
   );

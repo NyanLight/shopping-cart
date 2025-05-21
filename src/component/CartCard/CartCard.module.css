@@ -20,6 +20,7 @@
 .sign {
     padding: 12px;
     background-color: rgba(255, 206, 127, 1);
+    border: none;
     border-radius: 100%;
 }
 
