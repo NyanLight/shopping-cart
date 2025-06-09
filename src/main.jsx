@@ -4,17 +4,25 @@ import "./index.css";
 import { Goods } from "./pages/Goods/Goods";
 import { Cart } from "./pages/Cart/Cart";
 import { createBrowserRouter, RouterProvider } from "react-router";
-
+import { Error } from "./component/Error/Error";
+import { Wrapper } from "./component/Wrapper/Wrapper";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Goods />,
-    errorElement: <div>404 not found</div>,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
+    element: <Wrapper />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Goods />,
+        errorElement: <Error />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
+    ],
   },
 ]);
 

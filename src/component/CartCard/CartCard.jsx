@@ -1,7 +1,7 @@
 import styles from './CartCard.module.css';
 import binIcon from '../../assets/bin.svg';
 
-export function CartCard({id, title , price, image, quantity = 1}) {
+export function CartCard({title , price, image, quantity, handleAdd, handleDel, handleClear}) {
     return (
         <article className={styles.card}>
             <div>
@@ -9,9 +9,9 @@ export function CartCard({id, title , price, image, quantity = 1}) {
                     <img className={styles.img} src={image}/>
                 </div>
                 <div className={styles.quantityWrapper}>
-                    <button className={styles.sign} onClick={() => console.log(`${id} minus`)}>–</button>
+                    <button className={styles.sign} onClick={handleDel}>–</button>
                     <div>{quantity}</div>
-                    <button className={styles.sign} onClick={() => console.log(`${id} plus`)}>+</button>
+                    <button className={styles.sign} onClick={handleAdd}>+</button>
                 </div>
             </div>
             <div className={styles.info}>
@@ -20,7 +20,7 @@ export function CartCard({id, title , price, image, quantity = 1}) {
             </div>
             <div className={styles.rightPart}>
                 <div>
-                    <img onClick={() => console.log(`delete ${id}`)} src={binIcon} />
+                    <img onClick={handleClear} src={binIcon} />
                 </div>
                 <div className={styles.totalPrice}>{price * quantity}</div>
             </div>

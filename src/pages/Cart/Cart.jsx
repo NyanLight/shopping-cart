@@ -1,9 +1,5 @@
-import { Wrapper } from "../../component/Wrapper/Wrapper";
+import { CartContent } from "../../component/CartContent/CartContent";
 
 export function Cart() {
-  return (
-    <Wrapper>
-      <div>Cart</div>
-    </Wrapper>
-  );
+  return <CartContent />;
 }

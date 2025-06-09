@@ -1,9 +1,5 @@
-import { Wrapper } from "../../component/Wrapper/Wrapper";
+import { Caterogy } from "../../component/Category/Category";
 
 export function Goods() {
-  return (
-    <Wrapper>
-      <div>Hi, I am a goods component</div>
-    </Wrapper>
-  );
+  return <Caterogy title={"Goods"} />;
 }

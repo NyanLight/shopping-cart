@@ -1,34 +1,50 @@
+import { Outlet } from "react-router";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { ShopContext } from "./context";
+import { useState } from "react";
 
-const cart = [];
-const add = (product) => {
-  let itemIndex = cart.findIndex((el) => el.product.id === product.id);
-  if (itemIndex >= 0) {
-    cart[itemIndex].quantity += 1;
-  } else {
-    cart.push({ product, quantity: 1 });
-  }
-};
+export function Wrapper() {
+  const [cart, setCart] = useState([]);
 
-const del = (id) => {
-  let itemIndex = this.cart.findIndex((el) => el.id === id);
-  if (this.cart[itemIndex].quantity === 1) {
-    this.cart.splice(itemIndex, 1);
-  } else {
-    this.cart[itemIndex].quantity -= 1;
-  }
-};
+  const add = (product) => {
+    let temp = [...cart];
+    let itemIndex = temp.findIndex((el) => el.product.id === product.id);
+    if (itemIndex >= 0) {
+      temp[itemIndex].quantity = temp[itemIndex].quantity + 1;
+    } else {
+      temp.push({ product, quantity: 1 });
+    }
+    setCart([...temp]);
+  };
 
-export function Wrapper({ children }) {
+  const del = (id) => {
+    let temp = [...cart];
+    let itemIndex = temp.findIndex((el) => el.product.id === id);
+    if (temp[itemIndex].quantity === 1) {
+      temp.splice(itemIndex, 1);
+    } else {
+      temp[itemIndex].quantity = temp[itemIndex].quantity - 1;
+    }
+    setCart([...temp]);
+  };
+
+  const clear = (id) => {
+    let temp = [...cart];
+    let itemIndex = temp.findIndex((el) => el.product.id === id);
+    temp.splice(itemIndex, 1);
+    setCart([...temp]);
+  };
+
   return (
     <>
-      <ShopContext value={{ cart, add, del }}>
+      <ShopContext.Provider value={{ cart, add, del, clear }}>
         <Header />
-        <main>{children}</main>
+        <main>
+          <Outlet />
+        </main>
         <Footer />
-      </ShopContext>
+      </ShopContext.Provider>
     </>
   );
 }
