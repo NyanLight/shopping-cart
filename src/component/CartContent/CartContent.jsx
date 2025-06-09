@@ -6,6 +6,7 @@ import { useContext } from "react";
 
 export function CartContent() {
   const { cart, add, del, clear } = useContext(ShopContext);
+  const total = cart.reduce((prev, curr) => prev + (curr.product.price * curr.quantity), 0);
 
   return (
     <section className={styles.section}>
@@ -16,7 +17,7 @@ export function CartContent() {
             <CartCard
               id={item.product.id}
               image={item.product.image}
-              price={item.product.price}
+              price={(item.product.price).toFixed(2)}
               title={item.product.title}
               key={item.product.id}
               quantity={item.quantity}
@@ -27,7 +28,7 @@ export function CartContent() {
           ))}
         </div>
         <div>
-          <Payment />
+          <Payment total={total}  />
         </div>
       </div>
     </section>
