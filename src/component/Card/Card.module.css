@@ -16,14 +16,21 @@
     min-height: 70%;
 }
 
+.imgWrapper > img {
+    max-width: 200px;
+    max-height: 300px
+}
+
 .titlePart {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
 }
 
 .title {
     font-weight: 600;
+    height: 2rem;
+    overflow: 
 }
 
 .price {
