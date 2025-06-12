@@ -32,7 +32,7 @@ export function CartCard({
       </div>
       <div className={styles.rightPart}>
         <div>
-          <img onClick={handleClear} src={binIcon} />
+          <img className={styles.bin} onClick={handleClear} src={binIcon} />
         </div>
         <div className={styles.totalPrice}>{(price * quantity).toFixed(2)}</div>
       </div>

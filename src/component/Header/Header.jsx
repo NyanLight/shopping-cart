@@ -24,7 +24,7 @@ export function Header() {
           <Link to="/cart">
             <img src={cartIcon} />
           </Link>
-          <div className={styles.counter}>{count}</div>
+          {count > 0 && <div className={styles.counter}>{count}</div>}
         </div>
       </div>
     </header>
