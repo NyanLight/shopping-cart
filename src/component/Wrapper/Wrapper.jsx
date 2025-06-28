@@ -29,16 +29,20 @@ export function Wrapper() {
     setCart([...temp]);
   };
 
-  const clear = (id) => {
+  const clearItem = (id) => {
     let temp = [...cart];
     let itemIndex = temp.findIndex((el) => el.product.id === id);
     temp.splice(itemIndex, 1);
     setCart([...temp]);
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <>
-      <ShopContext.Provider value={{ cart, add, del, clear }}>
+      <ShopContext.Provider value={{ cart, add, del, clearItem, clearCart }}>
         <Header />
         <main>
           <Outlet />

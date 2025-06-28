@@ -6,7 +6,7 @@ import { useCategory } from "./hooks/useCategory.js";
 import { Loading } from "../Loading/Loading.jsx";
 
 export function Caterogy({ title }) {
-  const context = useContext(ShopContext);
+  const {add} = useContext(ShopContext);
   const { goods, error } = useCategory();
 
   if (!goods) return <Loading />;
@@ -26,7 +26,7 @@ export function Caterogy({ title }) {
                 price={good.price}
                 title={good.title}
                 clickHandler={() => {
-                  context.add(good);
+                  add(good);
                 }}
               />
             );

@@ -5,7 +5,7 @@ import styles from "./CartContent.module.css";
 import { useContext } from "react";
 
 export function CartContent() {
-  const { cart, add, del, clear } = useContext(ShopContext);
+  const { cart, add, del, clearItem} = useContext(ShopContext);
   const total = cart.reduce((prev, curr) => prev + (curr.product.price * curr.quantity), 0);
 
   return (
@@ -22,7 +22,7 @@ export function CartContent() {
               key={item.product.id}
               quantity={item.quantity}
               handleDel={() => del(item.product.id)}
-              handleClear={() => clear(item.product.id)}
+              handleClear={() => clearItem(item.product.id)}
               handleAdd={() => add(item.product)}
             />
           ))}
