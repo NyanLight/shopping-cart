@@ -21,7 +21,7 @@ describe("Header", () => {
     screen.debug();
   });
 
-  it("Display zero if context's array is empty", () => {
+  it("Doesn't display zero if context's array is empty", () => {
     render(
       <MemoryRouter>
         <ShopContext.Provider value={{ cart: [] }}>
@@ -29,7 +29,7 @@ describe("Header", () => {
         </ShopContext.Provider>
       </MemoryRouter>
     );
-    expect(screen.getByText("0")).toBeInTheDocument();
+    expect(screen.queryByText("0")).toBeNull();
     screen.debug();
   });
 });
