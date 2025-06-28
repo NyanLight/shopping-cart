@@ -11,7 +11,7 @@ export function Card({ title, price, image, clickHandler }) {
       </div>
       <div className={styles.titlePart}>
         <div className={styles.title}>
-          {title.split(" ").slice(0, 10).join(" ")}
+          {title.split(" ").slice(0, 5).join(" ")}
         </div>
         <div className={styles.price}>${price}</div>
       </div>
