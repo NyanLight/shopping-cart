@@ -1,7 +1,8 @@
 import styles from "./Footer.module.css";
 import telegramIcon from "../../assets/telegram.svg";
 import whatsappIcon from "../../assets/whatsapp.svg";
-import earthIcon from '../../assets/earth.svg';
+import earthIcon from "../../assets/earth.svg";
+import { Link } from "react-router";
 
 export function Footer() {
   return (
@@ -18,7 +19,9 @@ export function Footer() {
         <div>Terms and conditions</div>
         <div>
           <ul className={styles.languages}>
-            <li><img src={earthIcon} className={styles.earthIcon}/></li>
+            <li>
+              <img src={earthIcon} className={styles.earthIcon} />
+            </li>
             <li>Рус</li>
             <li className={styles.selected}>Eng</li>
           </ul>
@@ -26,7 +29,9 @@ export function Footer() {
       </div>
       <div className={styles.socials}>
         <div className={styles.social}>
-          <img src={telegramIcon} />
+          <a href="https://t.me/NyanLight">
+            <img src={telegramIcon} />
+          </a>
         </div>
         <div className={styles.social}>
           <img src={whatsappIcon} />
