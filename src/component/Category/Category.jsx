@@ -3,12 +3,13 @@ import { ShopContext } from "../Wrapper/context";
 import styles from "./Category.module.css";
 import { useContext } from "react";
 import { useCategory } from "./hooks/useCategory.js";
+import { Loading } from "../Loading/Loading.jsx";
 
 export function Caterogy({ title }) {
   const context = useContext(ShopContext);
   const { goods, error } = useCategory();
 
-  if (!goods) return <div>Loading...</div>;
+  if (!goods) return <Loading />;
   if (error) return <div>We've got a problem! Error: {error}</div>;
 
   return (
